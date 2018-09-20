@@ -43,3 +43,33 @@ write-up: Apparently there is nothin on this source code, only a not showed pixe
 		<!--The password for natas3 is sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14 -->
 
 Nata3:
+
+examining the source code, we get the message:  No more information leaks!! Not even Google will find it this time... 
+
+this suggests something hidden in robots.txt, which is the file that disallows some paths from crawlers. If we navigate to /robots.txt, we see that the folder /s3cr3t is disallowed. That folder contais the user.txt file, that has the password:
+
+natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+
+--> Natas4:
+
+We get the message:
+Access disallowed. You are visiting from "" while authorized users should come only from "http://natas5.natas.labs.overthewire.org/" 
+In the request headers, there is a "referer" field, that resolves to http://natas4.natas.labs.overthewire.org/
+so we should edit the referer to natas5 and resend the request. Then, if we go to the response field, we see the password:
+
+Access granted. The password for natas5 is iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq
+
+
+--> Natas5:
+
+In this level, we get the message:
+
+ Access disallowed. You are not logged in.
+
+If we examine the response, we see a 401 (that doesn't help much) and a 200 document. Let's take a closer look.
+There's a set cookie field that resolves to false (that is, = 0). We have to change that to true (that is, =1)
+We can edit the request cookies, adding ;loggedin=0 to the end of the line. Now the response from the site will be:
+Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+
+
+
