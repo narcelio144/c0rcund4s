@@ -1,0 +1,43 @@
+# Author: Narcelio Medeiros
+# This file has the purpose to share knowledge and work collaboratively. 
+
+Nata0:
+
+Username: natas0
+Password: natas0
+URL:      http://natas0.natas.labs.overthewire.org
+
+write-up: Just need a better look on the source code. ( On Chrome: Right Click > View Source Page)
+		<!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
+
+Nata1:
+
+Username: natas1
+Password: gtVrDuiDfck831PqWsLEZy5gyDz1clto
+URL:      http://natas1.natas.labs.overthewire.org
+
+write-up: Same logic, but on this page (again, using Chrome) the right click is blocked. 
+		  So, in order to view the souce page. just change the URL to:
+		  view-source:http://natas1.natas.labs.overthewire.org/
+		<!--The password for natas2 is ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi -->
+
+Nata2:
+
+Username: natas2
+Password: ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi
+URL:      http://natas2.natas.labs.overthewire.org
+
+write-up: Apparently there is nothin on this source code, only a not showed pixel
+		  <img src="files/pixel.png">
+		  On checking files directory: http://natas2.natas.labs.overthewire.org/files/
+		  It lists an `Index of /files`: pixel.png and users.txt
+		  On users.txt has the following content: 
+		  	# username:password
+			alice:BYNdCesZqW
+			bob:jw2ueICLvT
+			charlie:G5vCxkVV3m
+			natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+			eve:zo4mJWyNj2
+			mallory:9urtcpzBmH
+
+		<!--The password for natas3 is sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14 -->
