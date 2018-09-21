@@ -1,0 +1,34 @@
+# Author: c0rcund4s
+# This file has the purpose to share knowledge and work collaboratively.
+
+--> Natas 6:
+
+there is a funcion that runs when we submit the password. However, the first line of the function mentions an included path at /includes/secret.inc . When we navigate to that, the source code gives us the parameters we have to pass in order to get the password for level 7. 
+Password for level 7 is 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
+
+
+--> Natas 7:
+
+Very simple one. When we click on Home, the source code comments state the location of the next password, which is /etc/natas_webpass/natas8 . Now all we have to do is navigate to that location, including the path after the question mark in the HTML request. 
+The password for level 8 is DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe 
+
+
+--> Natas 8:
+
+This one is a little more work, though not extremely difficult. Taking a look at the source code, we see that the final encoded secret was run through three functions (bin2hex, strrev and base64_encode). Now allwe have to do is reverse these functions. So we will apply hex2bin, strrev and base64_decode, respectively. You can code it, but all three are easily found online.
+We shoud get the key oubWYf2kBq, that gives us the password for natas9: W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+
+
+--> Natas 9:
+
+Now we get another php function, called passthru. It iterates through a file to give us the secret. It also allows us to terminate the grep and pass another command through to the file, that will cat the password for us. For good practice purposes, we should comment the end of the line, that way everything after the actual password is left out.
+The password for Natas10 is nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+
+
+--> Natas10: 
+
+So this time our beloved semicolon was excluded from our possibilities. The best solution here is to use the grep command in the function to our advantage. We look to search everything in the file for our secret with the command ".* /etc/natas_webpass/natas11 #"
+That will cat the password for natas 11, which is SUIRtXqbB3tWzTOgTAX2t8UfMbYKrgp6
+
+
+--
