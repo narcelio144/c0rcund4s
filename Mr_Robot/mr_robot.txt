@@ -1,0 +1,34 @@
+scan shows 2 open ports, 80 and 443
+wordpress installation found
+
+robots.txt found. Content:
+
+User-agent: *
+fsocity.dic
+key-1-of-3.txt
+
+content key1.txt:
+073403c8a58a1f80d943455fb30724b9
+
+fsocity.dic wordlist
+
+try wpscan to bruteforce user
+how to get to user --> tried names from characters in the show
+ER28-0652 = password for elliot
+
+edit themes templates 404.php
+code obtained from pentest monkey reverse shell php
+paste to 404.php 
+path /wp-content/themes/twentyfifteen/404.php
+DISABLE NAT
+folder /home/robot
+key2 and password.rawmd5
+decrypt hashed password (crackstationutella or roots) 
+abcdefghijkabcdefghijklmnopqrstuvwxyzlmnopqrstuvwxyz
+su robot
+cat key2
+
+
+
+
+
