@@ -1,0 +1,130 @@
+flag nivel 1 = boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+
+nivel 2 = CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+utilizar o ~/ para fazer o cat do arquivo -
+
+nivel 3 = UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+utilizar tab ou \ para escrever o nome do arquivo com espacos
+
+nivel 4 = pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+utilizar o ls -la para listar arquivo oculto
+
+
+nivel 5 = koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+utilizar file ./* para verificar o atributo de todos os arquivos. Arquivo 7 > ASCII
+
+
+nivel 6 = DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+utilizar o find com flag readable e size
+
+nivel 7 = HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+usar find com flags user, size, group
+
+nivel 8 = cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+grep com flag -A 
+
+nivel 9 = UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+comando uniq so compara linhas adjacentes, faazer sort antes
+
+
+nivel 10 = truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+usar cat | strings
+
+nivel 11 = IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+usar cat | base64 -d
+
+
+nivel 12 = 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+usar cat | tr a-zA-Z n-za-mN-ZA-M
+
+
+nivel 13 = 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+varios comandos gzip, zcat, bzip2
+
+nivel 14 = usar sshkey.private no bandit14@lacalhost
+
+
+nivel 15 = netcat no localhost porta 30000
+
+nivel 16 = abrir openssl client com -ign_eof
+
+
+nivel 17 = cluFn7wTiGryunymYOu4RcffSxQluehd
+usar nmap na porta -sV
+pegar certificado e copiar para arquivo chave ssh, fazer chmod 600
+
+
+nivel 18 = kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+usar diff
+
+
+nivel 19 = IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+usar cat readme depois do ssh (mandrake)
+
+nivel 20 = GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+./bandit20-do executa o comando como usuario bandit20
+
+
+nivel 21 = gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+executar nc -l em um shell, executar o setuid em outro e passar a senha
+
+nivel 22 = Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+cronjob, fazer cat
+
+nivel 23 = jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+echo no $mytarget com bandit 23 pra ele escrever o password no /tmp
+
+nivel 24 = UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+fazer shell script copiando conteudo do diretorio para dir temporario criado
+
+
+nivel 25 = uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+fazer script com a forca bruta... passar com pipe o arquivo com o resultado + netcat
+
+nivel 26 = no flag
+custom shell. no manual do more, tem um editor, fazer :set shell /bin/bash e pedir o shell
+
+nivel 27 = 3ba3118a22e93127a4ed485be72ef5ea
+executar o setuid com o cat do /etc/bandit_pass
+
+nivel 28 = 0ef186ac70e04ea33b4c1853d2526fa2
+clonar repositorio git em um diretorio com permissao de escrita
+
+
+nivel 29 = bbc96594b4e001778eee9975372716b2
+comando git show mostra objetos ocultos
+
+
+nivel 30 = 5b90576bedb2cc04c86a9e924ce42faf
+comandos usados git verify-pack cat-file -p para mostrar a senha antiga
+
+
+nivel 31 = 47e603bb428404d265f59c42920d81e5
+mesma coisa da anterior
+
+
+nivel 32 = 56a9bf19c63d650ce78e6ec0354ee45e
+fazer push com os comandos git add key.txt - git commit -m "Add key.txt" - git push origin master. Nao colocar nome do servidor remoto, so colocar nome do branch
+
+
+nivel 33 = c9c3199ddf4121b10cf581a98d51caee
+no shell restrito dar $echo $SHELL
+solucao longa = fazer script invocando o shell 
+#!/bin/bash
+/bin/sh -i
+
+colocar o tmp no PATH. executar o arquivo todo em maiuscula
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
