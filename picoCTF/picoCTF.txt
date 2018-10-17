@@ -1,0 +1,110 @@
+forensics  warmups 1
+just unzip the file
+{welcome_to_forensics}
+
+forensics warmup 2
+png file is actually a jpeg. open with other app
+{extensions_are_a_lie}
+
+general warmup 1
+convert hex to scii
+{A}
+
+general warmup 2
+convert base 27 to base 2
+{11011}
+
+general warmup 3
+base 16 to base 10
+{61}
+
+resources 1
+find flag in site text
+picoCTF{xiexie_ni_lai_zheli}
+
+reversing warmup 1
+browse to specified path
+run the program 
+{welc0m3_t0_r3VeRs1nG} 
+
+reversing warmup 2 
+convert base64 string to ascii
+{th4t_w4s_s1mpL3}
+
+crypto warmup 1
+vigenere table
+{SECREETMESSAGE}
+
+crypto warmup 2
+ROT13 easy
+{this_is_crypto!}
+
+grep 1
+grep picoCTF in file 
+{grep_and_you_will_find_42783683}
+
+netcat 1
+nc pico..... porta
+{NEtcat_iS_a_NEcESSiTy_8b6a1fbc}                                                                        
+here's johnny
+use john the ripper in file
+passwd kissme
+{J0hn_1$_R1pp3d_5f9a67aa}  
+
+strings
+use command strings WITH GREP to cat flag
+{sTrIngS_sAVeS_Time_c09b1444}
+
+pipe 
+nc > file then | grep
+
+inspect me 
+page source 
+flag split into three parts
+picoCTF{ur_4_real_1nspect0r_g4dget_e96dd105*/}
+
+grep 2
+
+the flag -r searches recursively. So the command is grep -r 'picoCTF' ./
+
+Aca-Shell-A
+
+It's kind of a little game. Just have to do what the prompt says... ls, rm, whoami, cp. Watch for the relative path. That's all.
+Flag is picoCTF{CrUsHeD_It_dddcec58}
+
+Client side is Still Bad
+
+We can find the flag in the Source Code, right on top of the code. It's out of order, so we can manually reorder it.
+picoCTF{client_is_bad_9117e9}	
+
+
+Desrouleaux
+
+We get a json object and the shell asks questions about it. Ideally we should use python, but seeing that there aren't many lines, we can do it manually.
+If we go python, we have to load the json in a pythonic object. This script will do that and answer the 1st question:
+
+#!/usr/bin/python
+import json
+from pprint import pprint
+
+with open('incidents.json', 'r') as f:
+    incidents_dict = json.load(f)
+
+for src_ip in incidents_dict['tickets']:
+    print (src_ip['src_ip']))
+
+and so on...
+
+
+LOGON
+
+So the site only checks for admin password. We can try an SQL Inj with admin " or ""=" ... that will work partially, as the flag still won't be revealed. Looking at the request headers, we see that there's a cookie that reads admin=False. We can try to change that value to True using Burp or even the Dev Tools on Firefox. Now we will get the flag. Flag: picoCTF{l0g1ns_ar3nt_r34l_92020990}
+
+
+
+
+
+wireshark 
+tcp string contains picoCTF
+
+
