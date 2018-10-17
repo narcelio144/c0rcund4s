@@ -100,11 +100,46 @@ LOGON
 
 So the site only checks for admin password. We can try an SQL Inj with admin " or ""=" ... that will work partially, as the flag still won't be revealed. Looking at the request headers, we see that there's a cookie that reads admin=False. We can try to change that value to True using Burp or even the Dev Tools on Firefox. Now we will get the flag. Flag: picoCTF{l0g1ns_ar3nt_r34l_92020990}
 
+Reading between the eyes
+
+Program gives us an image. Used an online steganography decoder. Flag is picoCTF{r34d1ng_b37w33n_7h3_by73s}
+
+RECOVERING FROM THE SNAP
+
+We use foremost (basic options, -o for output and -i for the animals.dd file) to recover some jpegs from the file. The last one contains the flag.
+
+
+ADMIN PANEL
+We get a pcap file with data from a site. We searched for the string password and the flag is revealed after some recurrences. Flag is picoCTF{n0ts3cur3_df598569}
+
+ASSEMBLY 0
+
+This is really basic one to understand the assembly language. From analyzing the code, we realize that the first parameter (ie 0xaa) is moved into the eax register, and the second parameter of the function (ie 0xf2) is stored in ebx. On the next line of code, the function pushes the ebx into eax. So the value returned will be eax, which is the flag.
+
+
+BUFFER OVERFLOW 0
+
+Always try to download the file locally and create a flag.txt file for the tests. It's much faster.
+This is a very basic BO vulnerability. Examining the source code, we see that the sig handler will just cat the flag if the buffer is overflown. So that's easy. We just print a bunch (> 24) characters and the flag will be shown.
+
+
+CAESAR CIPHER 1
+
+This is a very easy cipher, and the challenge is actually not knowing what the shift is on the string. We can get an online converter and "brute force" all shifts until something maybe makes sense. So with the shift 23 we get picoCTF{justagoodoldcaesarcipherwoyolfpu}. Seems like it would be this one, and indeed when we pass it on to the server, it is correct.
+
+ENVIRON
+
+There is a flag hidden in an environment variable. The first command we should try is printenv, but that doesn't give us anything other than some nice taunting by the game. The second command, which would be (set -o posix ; set) | less , gives us nothing either. So for the third try we will use the command set, which prints a whole mess. If we do set | grep picoCTF the flag is printed. picoCTF{eNv1r0nM3nT_v4r14Bl3_fL4g_3758492}
+
+HERTZ
+
+We get a substitution cipher. The text is from the book War and Peace. We can use an online tool to decode it. Quipqiup.com was very effective. Flag is substitution_ciphers_are_solvable_ftcfvtwroh
+
+HEX EDITOR
+
+We are given a file to open in hexeditor. We just search for the string picoCTF, which gives us the flag picoCTF{and_thats_how_u_edit_hex_kittos_4bE5aCb8}
 
 
 
-
-wireshark 
-tcp string contains picoCTF
 
 
