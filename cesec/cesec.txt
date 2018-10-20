@@ -1,0 +1,16 @@
+virtual machine vtsec
+
+netdiscover
+192.168.0.26
+
+three open ports
+apache on 80
+ftp on 21
+ssh on 22
+hydra detected a /secret folder on 80, so let's look into it...
+there is a wordpress blog on the /secret, but it appears to be broken. The links point to a /vtcsec folder. CHANGE PATH WITH ECHO ON /ETC/HOSTS.
+We can now proceed to bruteforce the admin/password. If we enumerate users with wpscan, we get that there is an admin user. Now we can brute force it. I used fasttrack to try and save time, and it actually worked. The combination is admin admin.
+Now we can use metasploit to try and get a shell. We will use the vulnerability admin shell upload and fill in the data. ATTENTION do not mess with the exploits.
+After getting the meterpreter shell, we will upgrade to an interactive shell. We can link to pentestmonkey for that. Then we are going to try to find a vulnerability on the target machine. We can use linuxprivchecker for that. We will transfer the file via netcat. 
+Linuxprivchecker will find a bunch of stuff. There is a hash for user marlinspike. We can download the file and pass it through Johnny. Password is also marlinspike.
+From marlinspike we can run the command sudo su with the same password to get root. 
