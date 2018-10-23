@@ -140,6 +140,29 @@ HEX EDITOR
 We are given a file to open in hexeditor. We just search for the string picoCTF, which gives us the flag picoCTF{and_thats_how_u_edit_hex_kittos_4bE5aCb8}
 
 
+SSH-KEYZ
+
+We have to create a key with ssh-keygen (if we don't already have one). Then we have to put it (paste the content) on the authorized_keys file on the webshell. Finally we can connect tothe site using ssh -i and the private key generated.
 
 
+IRISH REPO
 
+This is a basic SQL injection on the login screen. We can pass the parameter "admin ' or 1=1--" (without the double quotes) and the flag will be broadcast. Flag is: picoCTF{con4n_r3411y_1snt_1r1sh_d121ca0b}
+
+
+Mr. ROBOTS
+
+As the name hints, we have to take a look into the robots.txt file, to see which directories or files are disallowed. We get a forbidden html, which will give us the flag at picoCTF{th3_w0rld_1s_4_danger0us_pl4c3_3lli0t_c4075}.
+
+
+NO LOGON
+
+We don't have a login screen, and this time the site says we're not admin. In the GET flag request, there is no cookie for the admin, bu thte hint on the site says we should look out for the cookie. So we probably have to do it by trial and error. We have to create a cookie admin=True (case sensitive) in order for the program to cat the flag, which is: picoCTF{n0l0g0n_n0_pr0bl3m_ed714e0e}
+
+
+SECRET AGENT
+
+Now we have to change the user agent on the request to get the flag. The hint says it should be google, so we can switch to a googlebot user agent to get the flag, which is: picoCTF{s3cr3t_ag3nt_m4n_ed3fe08d}
+
+
+TRULY AN ARTIST
